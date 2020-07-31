@@ -6,31 +6,27 @@
 		</div>
 
 		<b-card bg-variant="light" class="mb-3">
-			<p>If you are using a printer that was originally shipped with RepRapFirmware, you can select a predefined template here:</p>
+			<p>Ready 3d printer configurations:</p>
 
 			<b-form-group>
 				<!--b-form-radio-group v-model="selectedMachine" name="machine" stacked class="mb-2">
-					<b-form-radio value="minikossel">T3P3 Mini Kossel</b-form-radio>
+
 				</b-form-radio-group>
 
 				<b-form-radio-group v-model="selectedMachine" name="machine" stacked class="mb-3">
 					<b-form-radio value="ormerod1">RepRapPro Ormerod 1</b-form-radio>
 					<b-form-radio value="ormerod2">RepRapPro Ormerod 2</b-form-radio>
 					<b-form-radio value="fisher">RepRapPro Fisher</b-form-radio>
-				</b-form-radio-group>
+				</b-form-radio-group>-->
 
 				<b-form-radio-group v-model="selectedMachine" name="machine" stacked class="mb-3">
 					<b-form-radio value="ender3pro">Creality Ender 3 Pro</b-form-radio>
-				</b-form-radio-group>
-
-				<p>The following machine templates were contributed by users and have not been throughly tested:</p>
-
-				<b-form-radio-group v-model="selectedMachine" name="machine" stacked class="mb-3">
-					<b-form-radio value="anet-a8">Anet A8</b-form-radio>
+					<!--<b-form-radio value="anet-a8">Anet A8</b-form-radio>
 					<b-form-radio value="distech-prometheus-system">Distech Prometheus System</b-form-radio>
 					<b-form-radio value="reach3d">Reach3D Printer</b-form-radio>
 					<b-form-radio value="wanhao-di3">Wanhao Duplicator i3</b-form-radio>
-				</b-form-radio-group-->
+					<b-form-radio value="minikossel">T3P3 Mini Kossel</b-form-radio-->
+				</b-form-radio-group>
 
 				<p>You can create your own individual configuration by creating a new one from scratch or by loading an existing JSON template:</p>
 
@@ -42,10 +38,6 @@
 		</b-card>
 
 		<div class="text-center mt-4">
-			<span class="text-muted">Note: If you encounter problems, please report your problems on <a href="https://github.com/jaysuk/configtool" target="_blank">GitHub</a>.
-				<br>
-				Some configuration options may not be available yet. In this case please refer to the <a href="https://duet3d.dozuki.com" target="_blank">Duet3D wiki</a>.</span>
-			<br><br>
 			<span class="text-muted">This web app is fully open-source and licensed under the terms of the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>. Version {{ version }}</span>
 		</div>
 

@@ -1,6 +1,6 @@
 <template>
 	<b-container>
-		<b-card no-body>
+		<!-- <b-card no-body>
 			<template #header>
 				<span class="mt-2">Expansion Boards</span>
 				<b-button-group class="float-right">
@@ -51,7 +51,7 @@
 			<h3 v-show="template.expansion_boards.length === 0" class="m-4 text-center text-muted">
 				No Expansion Boards configured
 			</h3>
-		</b-card>
+		</b-card-->
 
 		<b-row v-if="template.firmware >= 3">
 			<b-col cols="5">

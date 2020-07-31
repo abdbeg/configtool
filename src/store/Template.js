@@ -7,7 +7,7 @@ export default {
 	// Returns a copy of the default config template
 	getDefaultTemplate() {
 		return {
-			board: 'smoothieboard',
+			board: 'evnoia',
 			expansion_boards: [],
 			firmware: 3.00,
 			standalone: true,
@@ -60,7 +60,7 @@ export default {
 					endstop_pin: 'xstop',		// v3+
 					endstop_type: 1,
 					endstop_location: 1,
-                    stepperDriver: "",
+                    stepperDriver: "TMC2209",
                     stepperDriverTimings: "",
 				},
 				{
@@ -77,7 +77,7 @@ export default {
 					endstop_pin: 'ystop',		// v3+
 					endstop_type: 1,
 					endstop_location: 1,
-                     stepperDriver: "",
+                     stepperDriver: "TMC2209",
                     stepperDriverTimings: "",
 
 				},
@@ -94,9 +94,9 @@ export default {
 					driver_v3: '0.2',			// v3+
 					endstop_pin: 'zstop',			// v3+
 					endstop: null,
-					endstop_type: 3,
+					endstop_type: 1,
 					endstop_location: 1,
-                     stepperDriver: "",
+                     stepperDriver: "TMC2209",
                     stepperDriverTimings: "",
 
 				},
@@ -111,10 +111,11 @@ export default {
 					current: 800,
 					driver: 3,					// v1-2 only
 					driver_v3: '0.3',			// v3+
-                    stepperDriver: "",
+                    stepperDriver: "TMC2209",
                     stepperDriverTimings: "",
 
 				}
+				
 			],
 			idle: {
 				used: true,
@@ -226,7 +227,7 @@ export default {
 				]
 			},
 			network: {
-				enabled: false,
+				enabled: true,
 				mac_address: '00:1F:11:02:04:20',
 				name: 'My Printer',
 				password: '',
@@ -244,7 +245,7 @@ export default {
 				espDataReadyPin: '0.28',
 				lpcTfrReadyPin: '1.30',
 				espResetPin: '1.31',
-				espRXTX: false,
+				espRXTX: true,
 				serialRxPin: '0.3',
 				serialTxPin: '0.2',
 				serialRxPinalt: '4.29',
@@ -600,7 +601,7 @@ export default {
 		});
 
 		this.fixNozzles(template, this.getDefaultTemplate());
-		
+
 		// Fans
 		while (template.fans.length > board.maxFans) {
 			template.fans.pop();

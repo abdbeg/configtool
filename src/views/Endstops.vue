@@ -15,7 +15,6 @@ label.btn {
 		<b-card no-body>
 			<template slot="header">
 				<span class="mt-2">Endstop Configuration</span>
-				<abbr id="endstop_note" class="float-right" title="When an endstop is hit, the axis position will be set to the corresponding axis minimum/maximum. If your endstop switch is not mounted at the axis end, you will have to add an extra G92 code after the homing move (G1..S1) to your homing files in order to set the new axis position. When homing the Z axis using a Z probe, the firmware will set the new Z position to the specified trigger height">Note</abbr>
 			</template>
 
 			<table class="table mb-0">

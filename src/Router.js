@@ -10,7 +10,7 @@ import Heaters from './views/Heaters.vue'
 import Fans from './views/Fans.vue'
 import Tools from './views/Tools.vue'
 import Compensation from './views/Compensation.vue'
-import Display from './views/Display.vue'
+//import Display from './views/Display.vue'
 import Network from './views/Network.vue'
 import Finish from './views/Finish.vue'
 
@@ -56,10 +56,10 @@ export default new VueRouter({
 			path: '/Compensation',
 			component: Compensation
 		},
-		{
+		/* {
 			path: '/Display',
 			component: Display
-		},
+		}, */
 		{
 			path: '/Network',
 			component: Network

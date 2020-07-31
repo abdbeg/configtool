@@ -27,13 +27,13 @@ input::-webkit-inner-spin-button {
 					<b-nav-item to="Fans" :active="$route.path === '/Fans'">Fans</b-nav-item>
 					<b-nav-item to="Tools" :active="$route.path === '/Tools'">Tools</b-nav-item>
 					<b-nav-item to="Compensation" :active="$route.path === '/Compensation'">Compensation</b-nav-item>
-					<b-nav-item to="Display" :active="$route.path === '/Display'" v-show="$route.path === '/Display' || board.supportsDisplay">Display</b-nav-item>
+			<!--		<b-nav-item to="Display" :active="$route.path === '/Display'" v-show="$route.path === '/Display' || board.supportsDisplay">Display</b-nav-item> -->
 					<b-nav-item to="Network" :active="$route.path === '/Network'" v-show="$route.path === '/Network' || template.standalone">Network</b-nav-item>
 					<b-nav-item to="Finish" :active="$route.path === '/Finish'">Finish</b-nav-item>
 				</b-navbar-nav>
 			</b-container>
 		</b-navbar>
-		
+
 		<b-form ref="mainForm">
 			<keep-alive>
 				<router-view></router-view>

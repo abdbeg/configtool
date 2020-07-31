@@ -1,7 +1,7 @@
 <template>
 	<b-container>
 		<b-card v-if="template.standalone && (board.hasESP || board.hasEthernet)" header="Network Settings">
-			<b-form-checkbox v-model="networkEnabled" v-preset.left="preset.network.enabled" title="Check this to enable networking features (M552 S1)">Enable Network via Ethernet or ESP8266</b-form-checkbox>
+			<b-form-checkbox v-model="networkEnabled" v-preset.left="preset.network.enabled" title="You can enable wifi network or SBC, check this to enable networking features (M552 S1)">Enable Wifi</b-form-checkbox>
 			<div v-show="networkEnabled" class="pl-4">
 				<b-form-row class="mt-3">
 					<b-col>
@@ -73,7 +73,7 @@
 							<b-form-input v-model.trim="macAddress" v-preset="preset.network.mac_address" title="MAC address of your machine. This is normally auto-generated" :formatter="formatMAC" :state="isValidMAC(template.network.mac_address)" maxlength="17" placeholder="automatically generated" type="text"></b-form-input>
 						</b-form-group>
 					</b-col>
-				
+
 
 				<b-checkbox v-model="dhcp" v-preset.left="preset.network.dhcp" title="Use DHCP to acquire a dynamic IP configuration from your router (M552)">Acquire Dynamic IP Address via DHCP</b-checkbox>
 				<b-form-row v-show="!dhcp" class="pl-4 mt-3">
@@ -133,7 +133,7 @@ export default {
 			serialTxPin: 'template.network.serialTxPin',
 			serialRxPinalt: 'template.network.serialRxPinalt',
 			serialTxPinalt: 'template.network.serialTxPinalt'
-			
+
 		})
 	},
 	methods: {

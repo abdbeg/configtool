@@ -1,6 +1,6 @@
 <template>
 	<b-container>
-		<b-card no-body>
+		<b-card no-body class="long-overflow">
 			<template slot="header">
 				Axes
 				<!-- TODO add axis add buttons like for the extruders below -->
@@ -24,7 +24,7 @@
 			</table>
 		</b-card>
 
-		<b-card no-body class="mt-3">
+		<b-card no-body class="mt-3 long-overflow">
 			<template #header>
 				<span class="mt-2">Extruders</span>
 				<b-button-group v-if="template.firmware < 3" class="float-right">

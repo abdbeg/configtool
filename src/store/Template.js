@@ -92,7 +92,7 @@ export default {
 					current: 800,
 					driver: 2,					// v1-2 only
 					driver_v3: '0.2',			// v3+
-					endstop_pin: 'zstop',			// v3+
+					endstop_pin: 'zstop0',			// v3+
 					endstop: null,
 					endstop_type: 1,
 					endstop_location: 1,
@@ -115,7 +115,7 @@ export default {
                     stepperDriverTimings: "",
 
 				}
-				
+
 			],
 			idle: {
 				used: true,

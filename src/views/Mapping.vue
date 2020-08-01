@@ -54,7 +54,7 @@
 		</b-card-->
 
 		<b-row v-if="template.firmware >= 3">
-			<b-col cols="5">
+			<b-col cols="5" sm="1">
 				<b-card no-body class="mt-3">
 					<template #header>
 						<span class="mt-2">Drives</span>
@@ -132,7 +132,7 @@
 				</b-card>
 			</b-col>
 
-			<b-col cols="7">
+			<b-col cols="7" sm="1">
 				<b-card no-body class="mt-3">
 					<template #header>
 						<span class="mt-2">Heaters</span>

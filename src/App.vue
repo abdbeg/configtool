@@ -11,6 +11,28 @@ input::-webkit-inner-spin-button {
 .b-tooltip {
 	pointer-events: none;
 }
+
+@media (max-width: 767px) {
+  .col {
+    width: 100%;
+  }
+  .form-row {
+    width: 100%;
+    display: table-cell;
+  }
+  .col-sm-1 {
+    max-width: 100%;
+  }
+  .row {
+    display: table-row;
+  }
+  .long-overflow {
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+
+}
 </style>
 
 <template>

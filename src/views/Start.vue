@@ -1,8 +1,7 @@
 <template>
 	<b-container>
 		<div class="text-center">
-			<h2 class="mb-4">Welcome to the RepRapFirmware Configuration Tool (for LPC1768/1769 based boards)</h2>
-			<h4 class="text-muted mb-5">Please follow this wizard to obtain an individual configuration bundle for your printer</h4>
+			<h2 class="mb-4">RepRapFirmware Configuration Tool for Froust's boards</h2>
 		</div>
 
 		<b-card bg-variant="light" class="mb-3">
@@ -38,6 +37,7 @@
 		</b-card>
 
 		<div class="text-center mt-4">
+			<span class="text-muted">Froust</span><br>
 			<span class="text-muted">This web app is fully open-source and licensed under the terms of the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>. Version {{ version }}</span>
 		</div>
 

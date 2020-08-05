@@ -30,7 +30,23 @@ input::-webkit-inner-spin-button {
     overflow-x: scroll;
     width: 100%;
   }
-
+  .table th, .table td {
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+    text-align: center;
+  }
+  #general .ml-1 {
+    margin-left: 0 !important;
+  }
+  #general .ml-2 {
+    margin-left: 0 !important;
+  }
+  #mapping .col-sm-1 {
+    padding: 0;
+  }
+  .mapping-table-26 {
+    width: 26%;
+  }
 
 }
 </style>
@@ -271,7 +287,7 @@ export default {
 			if (this.addDWC && this.template.standalone) {
 				try {
 					// Get GitHub list of releases and assets. Do NOT get drafts and prereleases
-					const releaseInfo = await Compiler.downloadFile('https://api.github.com/repos/chrishamm/DuetWebControl/releases', 'json');
+					const releaseInfo = await Compiler.downloadFile('https://api.github.com/repos/abdbeg/DuetWebControl/releases', 'json');
 					let latestRelease = null;
 					releaseInfo.forEach(function(item) {
 						if (!item.draft && !item.prerelease && (!latestRelease || item.created_at > latestRelease.created_at)) {

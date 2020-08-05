@@ -78,7 +78,7 @@
 		</b-card>
 
 		<b-card no-body header="Printer Geometry" class="mt-3">
-			<b-tabs card pills v-model="geometry">
+			<b-tabs card pills v-model="geometry" id="general">
 				<b-tab title="Cartesian" :title-link-class="{ 'font-weight-bold' : preset.geometry.type === 'cartesian' }">
 					<geometry-form></geometry-form>
 					<span>This machine uses individual motors to drives each axis</span>

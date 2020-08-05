@@ -1,5 +1,5 @@
 <template>
-	<b-container>
+	<b-container id="mapping">
 		<!-- <b-card no-body>
 			<template #header>
 				<span class="mt-2">Expansion Boards</span>
@@ -54,7 +54,7 @@
 		</b-card-->
 
 		<b-row v-if="template.firmware >= 3">
-			<b-col cols="5" sm="1">
+			<b-col md="5" sm="1">
 				<b-card no-body class="mt-3">
 					<template #header>
 						<span class="mt-2">Drives</span>
@@ -132,7 +132,7 @@
 				</b-card>
 			</b-col>
 
-			<b-col cols="7" sm="1">
+			<b-col md="7" sm="1">
 				<b-card no-body class="mt-3">
 					<template #header>
 						<span class="mt-2">Heaters</span>
@@ -146,7 +146,7 @@
 						</b-button-group>
 					</template>
 
-					<b-table-simple striped hover class="mb-0">
+					<b-table-simple striped hover class="mb-0 long-overflow">
 						<b-thead>
 							<b-th>
 								Index
@@ -166,7 +166,7 @@
 								<b-td>
 									{{ index }}
 								</b-td>
-								<b-td>
+								<b-td class="mapping-table-26">
 									<b-select :value="getHeaterType(index)" @change="setHeaterType(index, $event)" size="sm" :options="heaterTypes"></b-select>
 								</b-td>
 								<b-td>

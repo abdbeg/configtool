@@ -1,4 +1,4 @@
-# RepRapFirmware Configuration Tool
+# RepRapFirmware Configuration Tool for Frousts' boards
 
 licensed under the terms of the GPLv3
 

@@ -85,7 +85,7 @@
          "endstop_location":1,
          "endstop":null,
          "driver_v3":"0.2",
-         "endstop_pin":"zstop"
+         "endstop_pin":"zstop0"
       },
       {
          "direction":0,

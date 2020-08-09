@@ -11,6 +11,17 @@ input::-webkit-inner-spin-button {
 .b-tooltip {
 	pointer-events: none;
 }
+.center {
+  display: flex;
+  flex-direction: column;
+}
+.steps-per-mm-text {
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+.mobile-message {
+  display: none;
+}
 
 @media (max-width: 767px) {
   .col {
@@ -28,7 +39,7 @@ input::-webkit-inner-spin-button {
   }
   .long-overflow {
     overflow-x: scroll;
-    width: 100%;
+    display: grid;
   }
   .table th, .table td {
     padding-right: 0.6rem;
@@ -47,12 +58,62 @@ input::-webkit-inner-spin-button {
   .mapping-table-26 {
     width: 26%;
   }
+  #motor tr > td  input {
+    min-width: 6rem !important;
+  }
+  .tooltip {
+    z-index: 10;
+  }
+  .col-sm-10 {
+    max-width: 100%;
+  }
+  .steps-per-mm {
+    box-shadow: 0px 0px 300px 5px rgba(0,0,0,0.37);
+    transition: 0.3s;
+  }
+  .popover-header {
+    padding: 0.75rem;
+  }
+  .popover-body {
+    padding: 0.75rem;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .popover-body .form-row {
+    display: inline-flex;
+  }
+  .popover-body .card-body {
+    padding: 1rem;
+  }
+  .bs-popover-bottom > .arrow::after {
+    display: none;
+  }
+  .bs-popover-bottom > .arrow::before {
+    display: none;
+  }
 
+}
+
+
+@media (max-width: 1023px) {
+  .mobile-message {
+    display: block;
+  }
+  .container {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
 }
 </style>
 
+
 <template>
 	<div id="app">
+    <h1 class="mobile-message">Unfortunately, configuration tools is not available for mobile devices and some small tablets, please use your PC.</h1>
+    <h1 class="mobile-message">К сожалению инструмент для настройки недоступен для мобильных телефонов и маленьких планшетов, пожалуйста используйте компьютер.</h1>
 		<b-navbar toggleable="md" variant="light" class="mb-4">
 			<b-container>
 				<b-navbar-nav>

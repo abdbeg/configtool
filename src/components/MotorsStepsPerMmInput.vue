@@ -5,25 +5,25 @@
 </style>
 
 <template>
-	<div>
-		<b-form-input :id="id" v-model.number="stepsPerMm" v-preset="presetDrive.steps_per_mm" title="Motor steps per mm (M92)" min="1" type="number" step="any" required></b-form-input>
-		<b-popover :target="id" :show.sync="popoverShown" placement="right" title="Calculate steps per mm" triggers="focus">
+	<div class="hide-tooltip">
+		<b-form-input :id="id" v-model.number="stepsPerMm" v-preset="presetDrive.steps_per_mm" title="Motor steps per mm (M92)" min="1" type="number" step="any" required triggers="hover" placement="bottom"></b-form-input>
+		<b-popover :target="id" :show.sync="popoverShown" placement="top" title="Calculate steps per mm" triggers="click" custom-class="steps-per-mm" >
 			<b-form>
-				<b-form-group label="Motor step angle:">
+				<b-form-group label="Step angle:" label-cols-md="5" label-cols-sm="5">
 					<b-select v-model.number="stepAngle">
-						<option value="0.9">0.9° (400 steps per rev)</option>
-						<option value="1.8">1.8° (200 steps per rev)</option>
-						<option value="7.5">7.5° (48 steps per rev)</option>
+						<option value="0.9">0.9°</option>
+						<option value="1.8">1.8°</option>
+						<option value="7.5">7.5°</option>
 					</b-select>
 				</b-form-group>
-				<b-form-group v-if="driveType != 'extruder'" label-cols="5" label="Drive type:">
+				<b-form-group v-if="driveType != 'extruder'" label-cols-sm="10" label-cols-md="5" label="Drive type:">
 					<b-select v-model="driveType">
 						<option value="belt">Belt</option>
 						<option value="leadscrew">Leadscrew</option>
 					</b-select>
 				</b-form-group>
 				<template v-if="driveType == 'belt'">
-					<b-form-group label-cols="5" label="Preset:">
+					<b-form-group label-cols-md="5" label-cols-sm="10" label="Belt type:">
 						<b-select v-model="beltPreset">
 							<option v-for="option in belt.presets" :value="option.value" v-text="option.text"></option>
 							<option value="custom">Custom</option>
@@ -97,14 +97,18 @@
 					</b-form-group>
 				</template>
 				<b-card bg-variant="light">
-					<p>Resulting steps per mm:</p>
-					<h3 :class="{ 'text-danger' : !isValid }">
+					<p class="steps-per-mm-text">Steps per mm <span>at x{{ drive.microstepping }} microstepping</span>:</p>
+					<h3 :class="{ 'text-danger' : !isValid }" class="text-center">
 						{{ isValid ? calculatedSteps.toFixed(2) : 'error' }}
-						<b-button size="sm" variant="primary" class="float-right set-button" :disabled="!isValid" @click="apply">
+					</h3>
+					<div class="center">
+						<b-button size="sm" variant="primary" class="float-right set-button" :disabled="!isValid" @click="apply" >
 							<font-awesome-icon icon="check"></font-awesome-icon> Set
 						</b-button>
-					</h3>
-					<span>at x{{ drive.microstepping }} microstepping</span>
+						<b-button size="sm" variant="danger" class="float-right set-button" :disabled="!isValid" @click="cancel" >
+							<font-awesome-icon icon="times"></font-awesome-icon> Cancel
+						</b-button>
+					</div>
 				</b-card>
 			</b-form>
 		</b-popover>
@@ -160,7 +164,7 @@ export default {
 				case 'belt':
 					return (360.0 * this.drive.microstepping) / (this.belt.pulleyTeeth * this.belt.pitch * this.stepAngle);
 
-				case 'leadscrew': 
+				case 'leadscrew':
 					let leadscrewRatio = this.leadscrew.ratio2 / this.leadscrew.ratio1;
 					return (360.0 * this.drive.microstepping * leadscrewRatio) / (this.leadscrew.pitch * this.stepAngle);
 
@@ -230,8 +234,12 @@ export default {
 		apply() {
 			this.stepsPerMm = parseFloat(this.calculatedSteps.toFixed(2));
 			this.popoverShown = false;
+		},
+		cancel() {
+			this.popoverShown = false;
 		}
 	},
+
 	props: {
 		index: {
 			type: Number,
